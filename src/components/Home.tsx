@@ -10,8 +10,8 @@ export default function Homepage() {
 
                 {/* Buttons */}
                 <div className="flex justify-center space-x-20 max-sm:flex-col max-sm:px-16 max-sm:space-y-5 max-sm:space-x-0">
-                    <button className="py-3 px-8 text-white rounded cursor-pointer duration-300 bg-orange-600 hover:bg-orange-800 max-sm:" type="button">See places</button>
-                    <button className="py-3 px-8 text-white rounded cursor-pointer duration-300 bg-green-600 hover:bg-green-800 max-sm:" type="button">Learn more</button>
+                    <button className="py-3 px-9 text-white rounded cursor-pointer duration-300 bg-orange-600 hover:bg-orange-800 max-sm:" type="button">See places</button>
+                    <button className="py-3 px-9 text-white rounded cursor-pointer duration-300 bg-green-600 hover:bg-green-800 max-sm:" type="button">Learn more</button>
                 </div>
 
                 <img className='bottom-0 mt-28 w-full' src="/assets/fort-santiago-bg.svg" alt="Fort Santiago" />
