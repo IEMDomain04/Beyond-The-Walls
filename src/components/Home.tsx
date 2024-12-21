@@ -14,7 +14,7 @@ export default function Homepage() {
                     <button className="py-3 px-9 text-white rounded cursor-pointer duration-300 bg-green-600 hover:bg-green-800 max-sm:" type="button">Learn more</button>
                 </div>
 
-                <img className='bottom-0 mt-28 w-full' src="/assets/fort-santiago-bg.svg" alt="Fort Santiago" />
+                <img className='bottom-0 mt-32 w-full' src="/assets/fort-santiago-bg.svg" alt="Fort Santiago" />
             </main>
         </>
     )
