@@ -1,3 +1,4 @@
+import Link from "next/link"
 export default function Homepage() {
   return (
     <>
@@ -15,7 +16,7 @@ export default function Homepage() {
             <button className="py-3 px-9 text-white rounded cursor-pointer duration-300 bg-green-600 hover:bg-green-800 max-sm:" type="button">Learn more</button>
           </div>
 
-          <img className='bottom-0 w-full max-sm:mt-28' src="/assets/fort-santiago-bg.svg" alt="Fort Santiago" />
+          <img className='w-full max-sm:mt-32' src="/assets/fort-santiago-bg.svg" alt="Fort Santiago" />
         </section>
       </main>
     </>
