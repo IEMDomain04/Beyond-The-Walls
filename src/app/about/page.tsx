@@ -1,7 +1,9 @@
+import Footer from '@/components/Footer';
+
 export default function About() {
     return (
-        <section>
-            <section className="flex px-20 py-10 items-center mb-32 max-sm:flex-col max-sm:px-7 max-sm:space-y-10 max-sm:mb-10">
+        <section className='bg-orange-50'>
+            <section className="flex px-20 py-20 items-center mb-10 max-sm:flex-col max-sm:px-7 max-sm:space-y-10 max-sm:mb-5">
                 <div className="space-y-5">
                     <h1 className="text-5xl font-bold tracking-wide max-sm:text-3xl">"Where is this place po?"</h1>
                     <p className="w-11/12 max-sm:text-xs max-sm:w-11/12">It’s common for students, roamers, and tourists exploring Intramuros to feel a bit overwhelmed or tired when they can’t easily find the places they’re looking for. That’s why this app is here—to make your journey stress-free and help you effortlessly discover the spots you want to visit inside Intramuros.</p>
@@ -21,6 +23,7 @@ export default function About() {
                     <img src="https://sa.kapamilya.com/absnews/abscbnnews/media/2023/life/03/28/20210918-covid-intramuros-tourists-gc-7534.jpg" alt="Intra Img" width={400} height={400} />
                 </div>
             </section>
+            <Footer />
         </section>
     )
 }

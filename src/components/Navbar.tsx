@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
 
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,9 +15,9 @@ export default function Navbar() {
 
             {/* Links Section */}
             <div className="hidden md:flex items-center space-x-10">
-                <h1 className="text-lg font-semibold cursor-pointer py-1 px-3 rounded hover:bg-orange-200 duration-200">Home</h1>
-                <h1 className="text-lg font-semibold cursor-pointer py-1 px-3 rounded hover:bg-orange-200 duration-200">About</h1>
-                <h1 className="text-lg font-semibold cursor-pointer py-1 px-3 rounded hover:bg-orange-200 duration-200">Places</h1>
+                <Link className="text-lg font-semibold cursor-pointer py-1 px-3 rounded hover:bg-orange-200 duration-200" href={"/"}>Home</Link>
+                <Link className="text-lg font-semibold cursor-pointer py-1 px-3 rounded hover:bg-orange-200 duration-200" href={"/about"}>About</Link>
+                <Link className="text-lg font-semibold cursor-pointer py-1 px-3 rounded hover:bg-orange-200 duration-200" href={"/places"}>Places</Link>
             </div>
 
             {/* Buttons Section */}
