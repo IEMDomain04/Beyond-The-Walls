@@ -19,12 +19,13 @@ export default function Homepage() {
             <p className="w-7/12 max-sm:text-xs max-sm:w-11/12">Not sure where to go? Don’t worry! This app is your guide to exploring Intramuros. You’re searching for historic landmarks, cozy cafes, or hidden gems, we’ll help you easily navigate the Walled City and discover the places you’d love to see!</p>
           </div>
 
-          {/* Buttons */}
+          {/* Buttons NOTE: CHANGE THE ADMIN BUTTON ROUTE */}
           <div className="flex justify-center space-x-20 max-sm:flex-col max-sm:px-16 max-sm:space-y-5 max-sm:space-x-0">
             <button
               className="py-3 px-9 text-white rounded cursor-pointer duration-300 bg-orange-600 hover:bg-orange-800 max-sm:"
               type="button"
-              onClick={() => handleNavigation('/places')}
+              
+              onClick={() => handleNavigation('/admin')}
             >
               See places
             </button>
