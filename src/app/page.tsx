@@ -24,7 +24,7 @@ export default function Homepage() {
             <button
               className="py-3 px-9 text-white rounded cursor-pointer duration-300 bg-orange-600 hover:bg-orange-800 max-sm:"
               type="button"
-              onClick={() => handleNavigation('/places')}
+              onClick={() => handleNavigation('/admin')}
             >
               See places
             </button>
