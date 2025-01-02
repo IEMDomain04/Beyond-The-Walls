@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,12 +10,7 @@ export default function Navbar() {
     <nav className="sticky top-0 z-50 flex justify-between items-center py-4 bg-orange-50 px-6 md:px-10 shadow-md">
       {/* Logo Section */}
       <Link href={"/"}><div className="flex items-center space-x-3 cursor-pointer">
-        <img
-          src="https://cdn-icons-png.flaticon.com/128/698/698684.png"
-          width={40}
-          height={40}
-          alt="Logo"
-        />
+        <Image src="/assets/wall-icon.svg" width={40} height={40} alt="Wall icon" />
         <h1 className="text-xl font-semibold max-sm:text-base">Beyond the Walls</h1>
       </div>
       </Link>
