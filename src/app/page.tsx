@@ -12,7 +12,7 @@ export default function Homepage() {
   return (
     <>
       <main>
-        <section className="mt-20">
+        <section className="mt-40">
           <div className="text-center justify-items-center space-y-8 mb-10 max-sm:space-y-5">
             <h2 className="text-xl max-sm:text-base">Welcome to</h2>
             <h1 className="text-5xl font-bold tracking-wide max-sm:text-3xl">Beyond the Walls</h1>
@@ -24,7 +24,7 @@ export default function Homepage() {
             <button
               className="py-3 px-9 text-white rounded cursor-pointer duration-300 bg-orange-600 hover:bg-orange-800 max-sm:"
               type="button"
-              onClick={() => handleNavigation('/admin')}
+              onClick={() => handleNavigation('/places')}
             >
               See places
             </button>

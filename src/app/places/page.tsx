@@ -4,6 +4,7 @@
 import { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "@/database/firebaseConfig";
+import Navbar from "@/components/Navbar";
 
 // Define Place interface for TypeScript
 interface Place {
@@ -51,14 +52,13 @@ export default function Places() {
 
   return (
     <div>
+      <Navbar />
       <div className="text-center my-20">
         <h2 className="text-xl max-sm:text-base">Your Guide to Must-See Places</h2>
         <h1 className="text-5xl font-bold tracking-wide max-sm:text-3xl">
           Places Beyond Intramuros
         </h1>
       </div>
-
-      <hr className="bg-black h-1 my-20" />
 
       <div className="flex justify-center space-x-10">
         <button

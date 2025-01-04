@@ -2,9 +2,17 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const router = useRouter();
+
+  const handleNavigation = (path: string) => {
+    router.push(path);
+  };
 
   return (
     <nav className="sticky top-0 z-50 flex justify-between items-center py-4 bg-orange-50 px-6 md:px-10 shadow-md">
@@ -42,6 +50,7 @@ export default function Navbar() {
         <button
           className="py-2 px-5 rounded-xl text-white bg-blue-800 cursor-pointer duration-200 hover:bg-blue-600"
           type="button"
+          onClick={() => handleNavigation('/admin')}
         >
           Sign in
         </button>

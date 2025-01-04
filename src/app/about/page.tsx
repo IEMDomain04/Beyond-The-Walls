@@ -1,5 +1,6 @@
 "use client"
 import Footer from '@/components/Footer';
+import Navbar from "@/components/Navbar";
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
@@ -11,7 +12,8 @@ export default function About() {
     };
 
     return (
-        <section className='bg-orange-50'>
+        <section>
+            <Navbar />
             <section className="flex px-32 py-20 items-center mb-10 max-sm:flex-col max-sm:px-7 max-sm:space-y-10 max-sm:mb-5">
                 <div className="space-y-5">
                     <h1 className="text-5xl font-bold tracking-wide max-sm:text-3xl">"Where is this place po?"</h1>
