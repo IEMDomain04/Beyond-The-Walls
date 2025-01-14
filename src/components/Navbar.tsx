@@ -4,6 +4,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
+const links = [
+  {name: 'Home', href: '/'},
+  {name: 'About', href: '/about'},
+  {name: 'Places', href: '/places'},
+]
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,7 +20,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="sticky top-0 z-50 flex justify-between items-center py-4 bg-orange-50 px-6 md:px-10 shadow-md">
+    <nav className="sticky top-0 z-50 flex justify-evenly py-4 bg-orange-50 px-6 max-sm:justify-between md:px-10 shadow-md">
       {/* Logo Section */}
       <Link href={"/"}><div className="flex items-center space-x-3 cursor-pointer">
         <Image src="/assets/wall-icon.svg" width={40} height={40} alt="Wall icon" />
@@ -25,32 +30,21 @@ export default function Navbar() {
 
       {/* Links Section */}
       <div className="hidden md:flex items-center space-x-10">
-        <Link
+        {links.map((link, index) => (
+          <Link key={index}
           className="text-lg font-semibold cursor-pointer py-1 px-3 rounded hover:bg-orange-200 duration-200"
-          href={"/"}
+          href={link.href}
         >
-          Home
+          {link.name}
         </Link>
-        <Link
-          className="text-lg font-semibold cursor-pointer py-1 px-3 rounded hover:bg-orange-200 duration-200"
-          href={"/about"}
-        >
-          About
-        </Link>
-        <Link
-          className="text-lg font-semibold cursor-pointer py-1 px-3 rounded hover:bg-orange-200 duration-200"
-          href={"/places"}
-        >
-          Places
-        </Link>
+        ))}
       </div>
 
-      {/* Buttons Section */}
+      {/* Buttons Section 
       <div className="hidden md:flex items-center space-x-5">
         <button
           className="py-2 px-5 rounded-xl text-white bg-blue-800 cursor-pointer duration-200 hover:bg-blue-600"
           type="button"
-          onClick={() => handleNavigation('/admin')}
         >
           Sign in
         </button>
@@ -61,6 +55,7 @@ export default function Navbar() {
           Register
         </button>
       </div>
+      */}
 
       {/* Burger Menu for Smaller Screens */}
       <div className="md:hidden">
@@ -96,27 +91,16 @@ export default function Navbar() {
       {/* Dropdown Menu */}
       {isMenuOpen && (
         <div className="absolute top-16 left-0 w-full bg-orange-50 flex flex-col items-center space-y-4 py-4 shadow-md md:hidden">
-          <Link
-            className="text-lg font-semibold cursor-pointer py-1 px-3 rounded hover:bg-orange-200 duration-200"
-            href={"/"}
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Home
-          </Link>
-          <Link
-            className="text-lg font-semibold cursor-pointer py-1 px-3 rounded hover:bg-orange-200 duration-200"
-            href={"/about"}
-            onClick={() => setIsMenuOpen(false)}
-          >
-            About
-          </Link>
-          <Link
-            className="text-lg font-semibold cursor-pointer py-1 px-3 rounded hover:bg-orange-200 duration-200"
-            href={"/places"}
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Places
-          </Link>
+          {links.map((link, index) => (
+          <Link key={index}
+          className="text-lg font-semibold cursor-pointer py-1 px-3 rounded hover:bg-orange-200 duration-200"
+          href={link.href}
+        >
+          {link.name}
+        </Link>
+        ))}
+          
+          {/*
           <button
             className="py-2 px-5 rounded-xl text-white bg-blue-800 cursor-pointer duration-200 hover:bg-blue-600"
             type="button"
@@ -129,6 +113,7 @@ export default function Navbar() {
           >
             Register
           </button>
+          */}
         </div>
       )}
     </nav>
