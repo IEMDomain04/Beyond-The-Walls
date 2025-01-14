@@ -1,100 +1,73 @@
 // Places.js
 "use client";
 
-import { useEffect, useState } from "react";
-import { collection, getDocs } from "firebase/firestore";
-import { db } from "@/database/firebaseConfig";
 import Navbar from "@/components/Navbar";
+import Image from "next/image";
 
-// Define Place interface for TypeScript
-interface Place {
-  id: string;
-  place: string;
-  description: string;
-}
-
-// Define PlaceCard component
-interface PlaceCardProps {
-  place: string;
-  description: string;
-}
-
-function PlaceCard({ place, description }: PlaceCardProps) {
-  return (
-    <div className="card border rounded shadow p-4 m-4 bg-white">
-      <h3 className="text-lg font-bold">{place}</h3>
-      <p className="text-sm text-gray-700">{description}</p>
-    </div>
-  );
-}
+const categories = [
+  { name: "Cafes", },
+  { name: "Museums" },
+  { name: "Churches" },
+  { name: "Walls" },
+]
 
 export default function Places() {
-  // Define the type of `places` state to be an array of `Place` objects
-  const [places, setPlaces] = useState<Place[]>([]);
-
-  useEffect(() => {
-    const fetchPlaces = async () => {
-      try {
-        const querySnapshot = await getDocs(collection(db, "Places"));
-        const placesData = querySnapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(), // Ensure that Firestore document data matches the expected shape
-        }));
-
-        setPlaces(placesData as Place[]); // Cast to `Place[]` if necessary
-      } catch (error) {
-        console.error("Error fetching places: ", error);
-      }
-    };
-
-    fetchPlaces();
-  }, []);
 
   return (
     <div>
       <Navbar />
-      <div className="text-center my-20">
-        <h2 className="text-xl max-sm:text-base">Your Guide to Must-See Places</h2>
-        <h1 className="text-5xl font-bold tracking-wide max-sm:text-3xl">
-          Places Beyond Intramuros
-        </h1>
-      </div>
 
-      <div className="flex justify-center space-x-10">
-        <button
-          className="py-3 px-10 bg-green-400 border border-black rounded hover:scale-110 hover:bg-green-600"
-          type="button"
-        >
-          Cafe
-        </button>
-        <button
-          className="py-3 px-10 bg-green-400 border border-black rounded hover:scale-110 hover:bg-green-600"
-          type="button"
-        >
-          Museum
-        </button>
-        <button
-          className="py-3 px-10 bg-green-400 border border-black rounded hover:scale-110 hover:bg-green-600"
-          type="button"
-        >
-          Churches
-        </button>
-        <button
-          className="py-3 px-10 bg-green-400 border border-black rounded hover:scale-110 hover:bg-green-600"
-          type="button"
-        >
-          Billiards
-        </button>
-      </div>
+      <section className="flex w-full px-24 mb-12 space-x-10">
+        <div>
+          <div className="mt-10 mb-10">
+            <h2 className="text-xl max-sm:text-base">Your Guide to Must-See Places</h2>
+            <h1 className="text-5xl font-bold tracking-wide max-sm:text-3xl">
+              Places Beyond Intramuros
+            </h1>
+          </div>
+
+          <div className="flex space-x-5">
+
+            <div className="flex items-center border bg-white border-black rounded-xl w-96">
+              <input
+                className="flex-grow px-4 py-2 outline-none rounded-xl"
+                type="text"
+                placeholder="Search place..."
+              />
+              <span className="px-3">
+                <Image src="/assets/search-icon.svg" width={20} height={20} alt="Search Icon" />
+              </span>
+            </div>
+
+            {/* Remove the comment nalang kapag kumpleto na yung image.
+            {categories.map((category, index) => (
+              <button
+                className="py-2 px-5 bg-green-400 border border-black rounded duration-300 hover:scale-105 hover:shadow-lg"
+                type="button"
+              >
+                {category.name}
+              </button>
+            ))} */}
+
+          </div>
+        </div>
+        <Image src="/assets/places-image.svg" height={400} width={400} alt="Location image" />
+      </section>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4">
-        {places.map((place) => (
-          <PlaceCard
-            key={place.id} // Ensure we have a unique key for each item
-            place={place.place || "Unknown Place"} // Default value if `place` is undefined
-            description={place.description || "No description available"} // Default value
-          />
-        ))}
+
+        <div className="w-widthCard flex space-x-8 p-8 bg-bgCard rounded-xl">
+          
+          <Image src="/assets/locations/fort-santiago.svg" width={180} height={180} alt="Fort Santiago" />
+          <div className="space-y-8">
+            <div className="space-y-3">
+              <h1 className="text-placeTitle font-bold">Fort Santiago</h1>
+              <h2 className="text-placeDesc">One of the oldest place inside of Intramuros. You’ll see a bridge and you’ll see a sign that says intramuros.</h2>
+            </div>
+            <button className="w-full rounded-xl text-white py-2 bg-buttonCard" type="button"> Know more </button>
+          </div>
+        </div>
+
       </div>
     </div>
   );

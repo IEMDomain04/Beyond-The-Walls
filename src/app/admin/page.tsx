@@ -1,4 +1,7 @@
-"use client"
+
+{/* Removed na kase yung firebase eh. hahaahha
+  
+  "use client"
 
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
@@ -78,3 +81,5 @@ function Admin() {
 }
 
 export default Admin;
+
+*/}
