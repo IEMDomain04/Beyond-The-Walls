@@ -20,7 +20,7 @@ export default function About() {
                     <p className="w-11/12 max-sm:text-xs max-sm:w-11/12">It’s common for students, roamers, and tourists exploring Intramuros to feel a bit overwhelmed or tired when they can’t easily find the places they’re looking for. That’s why this app is here—to make your journey stress-free and help you effortlessly discover the spots you want to visit inside Intramuros.</p>
                     <button className="py-3 px-9 text-white rounded cursor-pointer duration-300 bg-orange-600 hover:bg-orange-800 max-sm:w-full" 
                     type="button"
-                    onClick={() => handleNavigation('/places')}>See places</button>
+                    onClick={() => handleNavigation('/pages/places')}>See places</button>
                 </div>
                 <Image src="/assets/about1-image.svg" width={500} height={400} alt="Intramuros thumbnail" />
             </section>

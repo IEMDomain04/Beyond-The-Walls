@@ -6,8 +6,8 @@ import { useRouter } from "next/navigation";
 
 const links = [
   {name: 'Home', href: '/'},
-  {name: 'About', href: '/about'},
-  {name: 'Places', href: '/places'},
+  {name: 'About', href: '/pages/about'},
+  {name: 'Places', href: '/pages/places'},
 ]
 
 export default function Navbar() {

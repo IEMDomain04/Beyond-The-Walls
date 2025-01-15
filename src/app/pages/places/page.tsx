@@ -3,6 +3,7 @@
 
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import Information from "@/database/PlacesInformation"; // Use default import
 
 const categories = [
@@ -13,6 +14,12 @@ const categories = [
 ];
 
 export default function Places() {
+  const router = useRouter();
+
+  const handleNavigation = (path: string) => {
+    router.push(path);
+  };
+
   return (
     <div>
       <Navbar />
@@ -51,7 +58,8 @@ export default function Places() {
                 <h1 className="text-placeTitle font-bold">{place.title}</h1>
                 <h2 className="text-placeDesc">{place.description}</h2>
               </div>
-              <button className="w-full rounded-xl text-white py-2 bg-buttonCard" type="button">
+              <button className="w-full rounded-xl text-white py-2 bg-buttonCard" type="button" 
+              onClick={() => handleNavigation('/pages/about')}>
                 Know more
               </button>
             </div>

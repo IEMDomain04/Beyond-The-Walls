@@ -24,14 +24,14 @@ export default function Homepage() {
             <button
               className="py-3 px-9 text-white rounded cursor-pointer duration-300 bg-orange-600 hover:bg-orange-800 max-sm:"
               type="button"
-              onClick={() => handleNavigation('/places')}
+              onClick={() => handleNavigation('/pages/places')}
             >
               See places
             </button>
             <button
               className="py-3 px-9 text-white rounded cursor-pointer duration-300 bg-green-600 hover:bg-green-800 max-sm:"
               type="button"
-              onClick={() => handleNavigation('/about')}
+              onClick={() => handleNavigation('/pages/about')}
             >
               Learn more
             </button>
