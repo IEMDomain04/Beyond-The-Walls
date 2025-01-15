@@ -23,6 +23,21 @@ const Information = [
         'The grand gateway to Intramuros, featuring its historic walls and iconic architecture that transport visitors back in time.',
       src: '/assets/locations/intramuros-entrance.svg',
     },
+
+    {
+      title: 'San Agustin Church',
+      description:
+        'A UNESCO World Heritage Site and the oldest stone church in the Philippines, showcasing Baroque architecture and historical significance.',
+      src: '/assets/locations/san-agustin.svg',
+    },
+    
+    {
+      title: 'Bureau of the Treasury',
+      description:
+        'An iconic structure within Intramuros that houses the nation’s treasury, reflecting a blend of historical and colonial architecture.',
+      src: '/assets/locations/treasury.svg',
+    },
+    
   ];
   
   export default Information;
